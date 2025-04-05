@@ -1,7 +1,4 @@
 /**************************************************************************//**
-
-#ifndef CMSIS_COMPILER_H
-#define CMSIS_COMPILER_H
  * @file     cmsis_compiler.h
  * @brief    CMSIS compiler generic header file
  * @version  V5.0.4
@@ -267,6 +264,3 @@
 
 #endif /* __CMSIS_COMPILER_H */
 
-
-
-#endif // CMSIS_COMPILER_H
