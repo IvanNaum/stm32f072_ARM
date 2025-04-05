@@ -41,7 +41,7 @@ DEFINES = -DSTM32 -DSTM32F0 -DSTM32F051x8 -DHEAP_SIZE=$(HEAP_SIZE)
 
 # Compiler/Assembler/Linker/etc
 
-PREFIX = arm-none-eabi
+PREFIX = ${ARM_TOOLCHAIN_V12_DIR}/arm-none-eabi
 
 CC = $(PREFIX)-gcc
 AS = $(PREFIX)-as
