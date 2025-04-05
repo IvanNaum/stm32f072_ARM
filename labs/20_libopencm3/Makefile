@@ -9,7 +9,7 @@ HEAP_SIZE = 0x400
 ################
 # Sources
 
-SOURCES_S = core/startup_stm32f051x8.s
+SOURCES_S = core/startup_stm32f072xb_gcc.s
 
 SOURCES_CORE = $(wildcard core/*.c)
 SOURCES_LIB = $(wildcard lib/*.c)
@@ -32,7 +32,7 @@ INCLUDES += $(INC_LIBOPENCM3)
 
 LIBS_CONF = -L./libopencm3/lib -lopencm3_stm32f0
 
-DEFINES = -DSTM32 -DSTM32F0 -DSTM32F051x8 -DHEAP_SIZE=$(HEAP_SIZE)
+DEFINES = -DSTM32 -DSTM32F0 -DSTM32F072xB -DHEAP_SIZE=$(HEAP_SIZE)
 
 # Compiler/Assembler/Linker/etc
 
@@ -65,7 +65,7 @@ CFLAGS_EXTRA = -nostartfiles -nodefaultlibs -nostdlib \
 CFLAGS += $(DEFINES) $(MCUFLAGS) $(DEBUG_OPTIMIZE_FLAGS) $(CFLAGS_EXTRA) $(INCLUDES) $(LIBS_CONF)
 
 LDFLAGS = -static $(MCUFLAGS) -Wl,--start-group -lgcc -lc -lg -Wl,--end-group \
-          -Wl,--gc-sections -T core/stm32f051r8tx_mmap.ld $(LIBS_CONF)
+          -Wl,--gc-sections -T core/stm32f072rbtx_flash.ld $(LIBS_CONF)
 
 .PHONY: dirs all clean flash erase
 
